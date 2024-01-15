@@ -32,20 +32,47 @@ def signup():
         name = request.form['name']
         email = request.form['email']
         password = request.form['pass1']
-        # Cpassword = request.form['pass2']
+        Cpassword = request.form['pass2']
 
         # sql = f'''insert into users values(id, '{username}', '{name}', '{email}', '{password}', '', 0);'''
         # cursor.execute(sql)
 
-        user = User(username=username, name=name, email=email, password=password)
-        if(not user.Authenticate()):
-            user.CreateUser()   
-
-
-        
+        if(password == Cpassword and username != ""):
+            username = username.strip()
+            user = User(username=username, name=name, email=email, password=password)
+            if(not user.Authenticate()):
+                user.CreateUser()  
+            else:
+                print("User already exists!")
+                user.Authenticate()
+                if(user.password != password):
+                    session.pop('username', None)
+                    return redirect('/signup')
 
         return redirect('/')
-    return render_template('html/signup.html', name='signup')    
+    return render_template('html/signup.html', name='signup')   
+
+
+@app.route("/login", methods=["POST", "GET"])
+def login():
+    if request.method == "POST":
+        session['username'] = request.form['username']
+        username = request.form['username']
+        password = request.form['pass1']
+
+        if(username != ""):
+            username = username.strip()
+
+            user = User(username=username, name="", email="", password="")
+            
+            if(user.AuthenticateByUsername(username) and user.password == password):
+                return redirect('/')
+            else:
+                print('User does not exists!.')
+                session.pop('username', None)
+                return redirect('/login')
+            
+    return render_template('html/login.html', name='login')  
 
 @app.route('/logout')
 def logout():
