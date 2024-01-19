@@ -1,0 +1,19 @@
+{%  extends "html/layout.html"  %}
+
+{%block title%}Profile{%endblock%}
+
+
+{% block content%}
+<div class="userprofile">
+    <div class="userTitle">
+        {{user.name}}
+    </div>
+    <div class="biodata">
+        {{user.bio}}
+    </div>
+    <div class="settingBtns">
+        <a class="btns" href="">Edit</a>
+        <a class="btns" href="/logout">Logout</a>                
+    </div>
+</div>
+{%endblock%}

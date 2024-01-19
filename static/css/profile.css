@@ -1,0 +1,33 @@
+
+.userprofile{
+    position:absolute;
+    top:150px;
+    padding: 30px;
+    background-color: rgb(255, 167, 161);
+}
+
+.userTitle{
+    font-size: 50px;
+    color:white;
+}
+
+.biodata{
+    padding:20px;
+}
+
+.settingBtns{
+    padding:30px;
+}
+
+.btns{
+    padding:20px;
+    margin:20px;
+    background-color: rgb(243, 73, 61);
+    color:white;
+    text-decoration: none;
+    transition: background 0.5s;
+}
+
+.btns:hover{
+    background-color: rgb(209, 43, 32);
+}

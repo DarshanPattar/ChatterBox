@@ -1,0 +1,16 @@
+.contentstrip{
+    position:absolute;
+    top:150px;
+    background-color: rgb(255, 167, 161);
+}
+
+.content{
+    display: flex;
+    padding:30px;
+    background-color: rgb(255, 207, 207);
+    margin: 20px;
+}
+
+.contenttext{
+    padding:20px;
+}

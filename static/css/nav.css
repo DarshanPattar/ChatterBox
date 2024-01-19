@@ -1,0 +1,57 @@
+body{
+    padding:0px;
+    margin:0px;
+    background-color: rgb(255, 167, 161);
+    font-family: sans-serif;
+}
+
+.navbar{
+    position: fixed;
+    z-index: 2;
+    top:0;
+    display: flex;
+    justify-content: space-evenly;
+    padding:20px;
+    width: 100%;
+    background-color: rgb(243, 73, 61);
+}
+
+/* Nav Title */
+
+.title{
+    padding:20px;
+    font-size: 30px;
+    color:white;
+}
+
+.titlelink{
+    text-decoration: none;
+    color:white;
+}
+
+/* Nav item list */
+
+.menuItemList{
+    display: flex;
+    list-style: none;
+}
+
+.menuItem{
+    padding:10px;
+}
+
+.NavLinks{
+    text-decoration: none;
+    padding:10px;
+    font-size: 20px;
+    color:white;
+    border-bottom:none;
+    border: 1px solid rgb(243, 73, 61);
+    transition: border .3s;
+}
+
+.NavLinks:hover{
+    border-bottom: 1px solid black;
+}
+
+

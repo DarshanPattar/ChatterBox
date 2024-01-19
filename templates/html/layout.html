@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{%block title%}{% endblock %}</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='css/nav.css')}}">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/main.css')}}">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/profile.css')}}">
+</head>
+<body>
+    <div class="container">
+        <div class="navbar">
+            <div class="title">
+                <a class="titlelink" href="/">ChatterBox</a>
+            </div>
+            <div class="menu">
+                <ul class="menuItemList">
+                    <li class="menuItem"><a class="NavLinks" href="/">Home</a></li>
+                    <li class="menuItem"><a class="NavLinks" href="">Chat</a></li>
+
+                    <li class="menuItem"><a class="NavLinks" href="">Search</a></li>
+                    <li class="menuItem"><a class="NavLinks" href="/profile">Profile</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="contentarea">
+            {%block content%}
+            {%endblock%}
+        </div>
+    </div>
+</body>
+</html>

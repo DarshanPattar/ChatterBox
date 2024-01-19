@@ -70,5 +70,5 @@ def login():
 @auth.route('/logout')
 def logout():
     session.pop('username', None)
-    return redirect('/signup')
+    return redirect('/login')
     
