@@ -20,15 +20,10 @@ def index():
         return render_template('html/home.html', name='home', result = username)
     return redirect("/signup")
 
-@app.route("/profile")
-def profile():
-    if 'username' in session:
-        username = session['username']
-        user = User("", "", "", "")
-        user.AuthenticateByUsername(username)
-        return render_template('html/profile.html', user = user)
-    return redirect('/login')
 
+
+from proj.profile import pfile 
+app.register_blueprint(pfile, url_prefix='/profile')  
 
 from proj.auth import auth 
 app.register_blueprint(auth, url_prefix='/')  

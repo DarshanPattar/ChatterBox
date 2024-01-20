@@ -74,4 +74,32 @@ class User:
         else:
             return False
 
+    # update users set bio = 'This is updated Bio' where id = 24;
+    def UpdateUser(self, name, bio):
+        if bio != "":
+            sql = f'''update users set bio = '{bio}' where id = {self.id};'''
+            result = cursor.execute(sql)
+            if result:
+                print("Successfully Updated.")
+            else:
+                print("Failed to Update")
+
+        if name != "":
+            sql = f'''update users set name = '{name}' where id = {self.id};'''
+            result = cursor.execute(sql)
+            if result:
+                print("Successfully Updated.")
+            else:
+                print("Failed to Update")
+
     
+    def deleteUser(self):
+        sql = f'''delete from users where id={self.id}'''
+        result = cursor.execute(sql)
+        if result:
+            print("Successfully Deleted.")
+        else:
+            print("Failed to Delete")
+
+
+
