@@ -31,3 +31,16 @@
 .btns:hover{
     background-color: rgb(209, 43, 32);
 }
+
+#editForm{
+    position: absolute;
+    top:30%;
+    left:40%;
+    text-align: center;
+}
+
+.editInp{
+    padding:20px;
+    margin-bottom: 20px;
+    width:300px;
+}

@@ -3,9 +3,12 @@
 {%block title%}Edit Profile{%endblock%}
 
 {%block content%}
-<form action="/profile/edit" method = "post">
-    <input type="text" name="name" id="name"><br>
-    <input type="text" name="bio" id="bio"><br>
-    <input type="submit">
+
+<form action="/profile/edit" method = "post" id="editForm">
+    <h2>Edit Form</h2>
+    <p>Leave blank to not change.</p>
+    <input class="editInp" type="text" name="name" id="name" placeholder="Name"><br>
+    <textarea class="editInp" type="text" name="bio" id="bio" placeholder="Bio"></textarea><br>
+    <input class="editInp" type="submit">
 </form>
 {%endblock%}
