@@ -41,3 +41,35 @@ def deleteProfile():
             user.deleteUser()
             return redirect('/login')
     return redirect('/login')
+
+@pfile.route("/followers")
+def followers():
+    if 'username' in session:
+        username = session['username']
+        user = User('', '', '', '')
+        if(user.AuthenticateByUsername(username)):
+            followers = user.getFollowers()
+            return render_template("html/followers.html", followers = followers)
+    return redirect('/login')
+
+#following to be created
+@pfile.route("/following")
+def following():
+    if 'username' in session:
+        username = session['username']
+        user = User('', '', '', '')
+        if(user.AuthenticateByUsername(username)):
+            following = user.getFollowing()
+            return render_template("html/following.html", following = following)
+    return redirect('/login')
+
+
+@pfile.route("/unfollow/<int:id>")
+def unfollow(id):
+    if 'username' in session:
+        username = session['username']
+        user = User('', '', '', '')
+        if(user.AuthenticateByUsername(username)):
+            user.unFollow(id)
+            return redirect("/profile/following")
+    return redirect('/login')

@@ -1,0 +1,21 @@
+{%  extends "html/layout.html"  %}
+
+{%block title%}Following{%endblock%}
+
+{% block content%}
+<div class="contentstrip">
+    {%if following%}
+        {%for follow in following%}
+        <div class="userBar">
+            <h4 class="contentuser">{{follow[2]}}</h4>
+            <p class="contentuser">{{follow[1]}}</p>
+            <a class="contentuserUnfollow contentuser" href="/profile/unfollow/{{follow[0]}}">Unfollow</a>
+        </div>
+        {%endfor%}
+    {% else %}
+        <div class="userBar">
+            <h2 class="contentuser">None!</h2>
+        </div>
+    {%endif%}
+</div>
+{%endblock%}

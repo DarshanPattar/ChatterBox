@@ -102,4 +102,24 @@ class User:
             print("Failed to Delete")
 
 
+    def getFollowers(self):
+        #select * from users, followers where follower = id and following=19;
+        sql = f'''select id, username, name from users, followers where follower = id and following={self.id};'''
+        cursor.execute(sql)
+        result = cursor.fetchall()
+        resultset = set(result)
+        return resultset
+    
+    def getFollowing(self):
+        sql = f'''select id, username, name from users, followers where following = id and follower={self.id};'''
+        cursor.execute(sql)
+        result = cursor.fetchall()
+        resultset = set(result)
+        return resultset
+    
+    def unFollow(self, id):
+        sql = f'''delete from followers where follower={self.id} and following={id};'''
+        cursor.execute(sql)
+
+
 

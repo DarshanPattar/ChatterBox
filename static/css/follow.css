@@ -1,0 +1,26 @@
+.contentstrip{
+    position:absolute;
+    top:150px;
+    background-color: rgb(255, 167, 161);
+}
+
+.userBar{
+    position: relative;
+    width: 400px;
+    padding:20px;
+    background-color: rgb(255, 207, 207);
+    margin: 20px;
+}
+
+.contentuser{
+    padding:10px;
+    margin-left: 20px;
+}
+
+.contentuserUnfollow{
+    text-decoration: none;
+    padding:10px;
+    background-color: black;
+    color: white;
+    margin:15px;
+}
