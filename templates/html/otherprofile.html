@@ -1,0 +1,23 @@
+{%  extends "html/layout.html"  %}
+
+{%block title%}Profile{%endblock%}
+
+
+{% block content%}
+<div class="userprofile">
+    <div class="userTitle">
+        {{otheruser.name}}
+    </div>
+    <div class="biodata">
+        {{otheruser.bio}}
+    </div>
+    <div class="settingBtns">
+        {%if not isfollowing%}
+            <a class="btns" href="/search/follow/{{otheruser.username}}">Follow</a>
+        {%else%}
+            <a class="btns" href="/search/unfollow/{{otheruser.username}}">Unfollow</a>
+        {%endif%}
+        <a class="btns" href="/search?searchtxt=">Back</a>         
+    </div>
+</div>
+{%endblock%}

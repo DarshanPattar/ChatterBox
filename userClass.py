@@ -120,6 +120,33 @@ class User:
     def unFollow(self, id):
         sql = f'''delete from followers where follower={self.id} and following={id};'''
         cursor.execute(sql)
+    
+    
 
+    def getAllOtherUsers(self):
+        sql = f'''select username, name from users where id != {self.id};'''
+        cursor.execute(sql)
+        result = cursor.fetchall()
+        return result 
+    
+    def follow(self, user):
+        if not self.isfollowing(user):
+            sql = f'''insert into followers values(NULL, {self.id}, {user.id});'''
+            cursor.execute(sql)
+
+    def isfollowing(self, otheruser):
+        following = self.getFollowing()
+        print(following)
+        if (otheruser.id, otheruser.username, otheruser.name) in following:
+            return True
+        else:
+            return False
+        
+
+    def searchUser(self, username):
+        sql = f'''select * from users where username like '%{username}%' and username!='{self.username}';'''
+        cursor.execute(sql)
+        result = cursor.fetchall()
+        return result
 
 

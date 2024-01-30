@@ -21,6 +21,8 @@ def index():
     return redirect("/signup")
 
 
+from proj.search import finder
+app.register_blueprint(finder, url_prefix='/')
 
 from proj.profile import pfile 
 app.register_blueprint(pfile, url_prefix='/profile')  

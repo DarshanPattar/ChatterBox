@@ -1,0 +1,23 @@
+{%  extends "html/layout.html"  %}
+
+{%block title%}Search{%endblock%}
+
+
+{%block content%}
+<div class="profilestrip">
+    {%for usr in users%}
+    <div class="profilecard">
+        <h4>{{usr[1]}}</h4>
+        <p>username : {{usr[0]}}</p>
+        <a class="profilebtn" href="/search/{{usr[0]}}">Profile</a>
+    </div>
+    {%endfor%}
+</div>
+<div class="searchbar">
+    <form class="searchform" method="get" action="/search">
+        <input type="text" name="searchtxt" id="searchtxt" class="searchfield" placeholder="Enter username" value="">
+        <input type="submit" class="searchsubmit" value="Search">
+    </form>
+</div>
+
+{%endblock%}

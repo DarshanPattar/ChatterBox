@@ -8,7 +8,7 @@
         {%for follow in following%}
         <div class="userBar">
             <h4 class="contentuser">{{follow[2]}}</h4>
-            <p class="contentuser">{{follow[1]}}</p>
+            <p class="contentuser">username : {{follow[1]}}</p>
             <a class="contentuserUnfollow contentuser" href="/profile/unfollow/{{follow[0]}}">Unfollow</a>
         </div>
         {%endfor%}
