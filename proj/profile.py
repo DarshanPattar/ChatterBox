@@ -9,7 +9,7 @@ pfile = Blueprint('pfile', __name__)
 def profile():
     if 'username' in session:
         username = session['username']
-        user = User("", "", "", "")
+        user = User()
         user.AuthenticateByUsername(username)
         return render_template('html/profile.html', user = user)
     return redirect('/login')
@@ -20,7 +20,7 @@ def editProfile():
     if 'username' in session:
         if request.method == "POST":
             username = session['username']
-            user = User('', '', '', '')
+            user = User()
             name = request.form['name']
             bio = request.form['bio']
             if(user.AuthenticateByUsername(username)):
@@ -36,7 +36,7 @@ def editProfile():
 def deleteProfile():
     if 'username' in session:
         username = session['username']
-        user = User('', '', '', '')
+        user = User()
         if(user.AuthenticateByUsername(username)):
             user.deleteUser()
             return redirect('/login')
@@ -46,7 +46,7 @@ def deleteProfile():
 def followers():
     if 'username' in session:
         username = session['username']
-        user = User('', '', '', '')
+        user = User()
         if(user.AuthenticateByUsername(username)):
             followers = user.getFollowers()
             return render_template("html/followers.html", followers = followers)
@@ -57,7 +57,7 @@ def followers():
 def following():
     if 'username' in session:
         username = session['username']
-        user = User('', '', '', '')
+        user = User()
         if(user.AuthenticateByUsername(username)):
             following = user.getFollowing()
             return render_template("html/following.html", following = following)
@@ -68,7 +68,7 @@ def following():
 def unfollow(id):
     if 'username' in session:
         username = session['username']
-        user = User('', '', '', '')
+        user = User()
         if(user.AuthenticateByUsername(username)):
             user.unFollow(id)
             return redirect("/profile/following")

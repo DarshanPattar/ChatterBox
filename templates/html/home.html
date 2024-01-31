@@ -4,13 +4,20 @@
 
 {% block content%}
 <div class="contentstrip">
+    {% for post in posts %}
     <div class="content">
-        <p class="contenttext">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam nobis, auttatibus doloribus laudantium. Aut praesentium in labore culpa ut et nesciunt cumque magnam, laudantium earum incidunt neque quia quo? Dolores atque dolorem praesentium omnis aperiam consequuntur beatae illo, debitis minus cum sint delectus eius distinctio sequi molestiae. Suscipit voluptatem architecto iste illum, minus dolores ratione esse quo quae et explicabo, officiis eos, voluptas ullam! Voluptatibus eius eos molestias praesentium sapiente vero laborum nihil fugiat, facere reprehenderit dolores maiores quia, hic consectetur nisi architecto. Soluta, vitae blanditiis! Corporis, quod error? Temporibus odit dolorem, obcaecati quis mollitia tenetur. Dolorem officia aut assumenda autem numquam quaerat soluta eaque vero. Autem delectus reiciendis debitis. Ad asperiores nobis dignissimos eaque aut quia deleniti reprehenderit! Corporis exercitationem iure neque ullam suscipit alias qui aspernatur, sequi ipsa! Illum, aspernatur et magnam, perferendis quae veritatis libero nostrum error dolorem, provident cupiditate! Enim possimus sed in eveniet voluptatem est debitis saepe libero laborum quis placeat consectetur illum id impedit minima qui ullam corporis provident, repellendus explicabo. Unde, temporibus! Et fugit aperiam perferendis facilis repudiandae maiores voluptatem soluta sed sapiente, repellendus explicabo sequi, eum nisi odio excepturi vitae quod, aliquid doloremque nesciunt illo fugiat temporibus. Quasi, id animi.</p>
-        <button class="actionbtn">Delete</button>
+        <p class="contenttext">@{{post[2]}} - {{post[3]}}</p>
+        
+        <p class="contentdate">Published date : {{post[4]}}</p>
+
+        {% if post[1] == cuser.id or cuser.isSuper == 1 %}
+            <a class="actionbtn" href="/post/delete/{{post[0]}}">Delete</a>
+        {% endif %}
     </div>
-    <div class="content">
-        <p class="contenttext">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam nobis, auttatibus doloribus laudantium. Aut praesentium in labore culpa ut et nesciunt cumque magnam, laudantium earum incidunt neque quia quo? Dolores atque dolorem praesentium omnis aperiam consequuntur beatae illo, debitis minus cum sint delectus eius distinctio sequi molestiae. Suscipit voluptatem architecto iste illum, minus dolores ratione esse quo quae et explicabo, officiis eos, voluptas ullam! Voluptatibus eius eos molestias praesentium sapiente vero laborum nihil fugiat, facere reprehenderit dolores maiores quia, hic consectetur nisi architecto. Soluta, vitae blanditiis! Corporis, quod error? Temporibus odit dolorem, obcaecati quis mollitia tenetur. Dolorem officia aut assumenda autem numquam quaerat soluta eaque vero. Autem delectus reiciendis debitis. Ad asperiores nobis dignissimos eaque aut quia deleniti reprehenderit! Corporis exercitationem iure neque ullam suscipit alias qui aspernatur, sequi ipsa! Illum, aspernatur et magnam, perferendis quae veritatis libero nostrum error dolorem, provident cupiditate! Enim possimus sed in eveniet voluptatem est debitis saepe libero laborum quis placeat consectetur illum id impedit minima qui ullam corporis provident, repellendus explicabo. Unde, temporibus! Et fugit aperiam perferendis facilis repudiandae maiores voluptatem soluta sed sapiente, repellendus explicabo sequi, eum nisi odio excepturi vitae quod, aliquid doloremque nesciunt illo fugiat temporibus. Quasi, id animi.</p>
-        <button class="actionbtn">Delete</button>
-    </div>
+    {% endfor %}
+
+</div>
+<div class="postactionsection">
+    <a class="createpostbtn" href="/post/create">Create Post</a>
 </div>
 {%endblock%}

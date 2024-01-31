@@ -8,7 +8,7 @@ finder = Blueprint('finder', __name__)
 def search():
     if 'username' in session:
         username = session['username']
-        user = User('', '', '', '')
+        user = User()
 
         if(request.method == 'GET'):
             usern = request.args["searchtxt"]
@@ -29,10 +29,10 @@ def search():
 def usrProfile(usn):
     if 'username' in session:
         username = session['username']
-        user = User('', '', '', '')
+        user = User()
         if(user.AuthenticateByUsername(username)):
             
-            otheruser = User('', '', '', '')
+            otheruser = User()
             otheruser.AuthenticateByUsername(usn)
             following = user.getFollowing()
             print(following)
@@ -48,9 +48,9 @@ def usrProfile(usn):
 def followUser(usr):
     if 'username' in session:
         username = session['username']
-        user = User('', '', '', '')
+        user = User()
         if(user.AuthenticateByUsername(username)):
-            otheruser = User('', '', '', '')
+            otheruser = User()
             otheruser.AuthenticateByUsername(usr)
             if(not user.isfollowing(otheruser)):
                 user.follow(otheruser)
@@ -62,9 +62,9 @@ def followUser(usr):
 def unFollowUser(usr):
     if 'username' in session:
         username = session['username']
-        user = User('', '', '', '')
+        user = User()
         if(user.AuthenticateByUsername(username)):
-            otheruser = User('', '', '', '')
+            otheruser = User()
             otheruser.AuthenticateByUsername(usr)
             user.unFollow(otheruser.id)
             return redirect("/search/" + usr)

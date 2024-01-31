@@ -5,12 +5,13 @@ cursor = db.cursor()
 
 
 class User:
-    def __init__(self, username, name, email, password, bio = ""):
+    def __init__(self, username = "", name = "", email = "", password = "", bio = "", issuper = False):
         self.username = username
         self.name = name
         self.email = email
         self.password = password
         self.bio = bio
+        self.isSuper = issuper
     
     def Authenticate(self):
         sql = f'''select * from users where username='{self.username}';'''
@@ -36,6 +37,7 @@ class User:
             self.email = result[3]
             self.password = result[4]
             self.bio = result[5]
+            self.isSuper = result[6]
             return self.id
         else:
             print("User does not exists!")
@@ -53,6 +55,7 @@ class User:
             self.email = result[3]
             self.password = result[4]
             self.bio = result[5]
+            self.bio = result[6]
             return self.id
         else:
             print("User does not exists!")

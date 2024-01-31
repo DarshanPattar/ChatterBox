@@ -1,16 +1,65 @@
 .contentstrip{
     position:absolute;
     top:150px;
+    width: 100%;
     background-color: rgb(255, 167, 161);
 }
 
 .content{
-    display: flex;
     padding:30px;
     background-color: rgb(255, 207, 207);
     margin: 20px;
 }
 
+.contentdate{
+    color:blueviolet;
+}
+
 .contenttext{
     padding:20px;
+    border:1px solid grey;
+    border-radius: 20px;
+}
+
+.actionbtn{
+    text-decoration: none;
+    padding: 10px;
+    color:white;
+    border-radius: 20px;
+    background-color: rgb(243, 73, 61);
+    transition: background 0.5s;
+}
+
+.actionbtn:hover{
+    background-color: rgb(168, 49, 40);
+}
+
+.createpostbtn{
+    background-color: white;
+    text-decoration: none;
+    padding:20px;
+}
+
+.createpostbtn:hover{
+    background-color: rgb(250, 160, 108);
+}
+
+#postform{
+    padding:30px;
+}
+
+#postcontent{
+    width: 500px;
+    height: 400px;
+}
+
+#postsubmit{
+    width:200px;
+    padding:10px;
+}
+
+.postactionsection{
+    position:fixed;
+    top:150px;
+    right:0px;
 }
