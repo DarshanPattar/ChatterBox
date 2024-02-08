@@ -9,6 +9,13 @@
     <link rel="stylesheet" href="{{url_for('static', filename='css/follow.css')}}">
     <link rel="stylesheet" href="{{url_for('static', filename='css/profile.css')}}">
     <link rel="stylesheet" href="{{url_for('static', filename='css/search.css')}}">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/chat.css')}}">
+    <script>
+        window.setInterval(function() {
+            var elem = document.getElementById('textstrip');
+            window.scrollTo(0, elem.scrollHeight);
+          }, 1000);
+    </script>
 </head>
 <body>
     <div class="container">
@@ -19,7 +26,7 @@
             <div class="menu">
                 <ul class="menuItemList">
                     <li class="menuItem"><a class="NavLinks" href="/">Home</a></li>
-                    <li class="menuItem"><a class="NavLinks" href="">Chat</a></li>
+                    <li class="menuItem"><a class="NavLinks" href="/chat">Chat</a></li>
 
                     <li class="menuItem"><a class="NavLinks" href="/search?searchtxt=">Search</a></li>
                     <li class="menuItem"><a class="NavLinks" href="/profile">Profile</a></li>

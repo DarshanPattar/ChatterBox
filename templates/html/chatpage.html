@@ -1,0 +1,13 @@
+{% extends "html/layout.html" %}
+
+{% block title %}Chat{%endblock%} 
+{%block content%}
+<div class="textstrip">
+  Go to search to find people to message!
+  {%for chatbox in chatboxes%}
+  <div class="chatbox">
+    <a class="cbdisplay" href="/chat/chatbox/{{chatbox['idlink']}}">{{chatbox['name']}}</a>
+  </div>
+  {%endfor%}
+</div>
+{%endblock%}

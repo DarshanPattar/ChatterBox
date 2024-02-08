@@ -4,7 +4,7 @@
 
 {% block content%}
 <div class="contentstrip">
-    {% for post in posts %}
+    {% for post in posts[::-1] %}
     <div class="content">
         <p class="contenttext">@{{post[2]}} - {{post[3]}}</p>
         

@@ -1,0 +1,28 @@
+{% extends "html/layout.html" %}
+
+{% block title %}Chatbox{% endblock title %}
+
+{% block content %}
+
+<div class="textstrip" id="textstrip">
+  {% for text in texts %}
+    {% if text[1] == currentuser.id %}
+    <div class="thisuser">
+        <p>{{text[3]}}</p>
+      </div>
+    {% else %}
+    <div class="thatuser">
+        <p>{{text[3]}}</p>
+      </div>
+    {% endif %}
+  {% endfor %}
+
+</div>
+<div class="textingbar">
+  <form class="textingform" action="/chat/chatbox/{{idlink}}" method="post">
+    <input type="text" name="cbtext" id="cbtext" class="messagefield" placeholder="Enter Text" />
+    <input type="submit" class="messagesubmit" value="Send" />
+  </form>
+</div>
+{% endblock content %}
+

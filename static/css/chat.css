@@ -1,0 +1,68 @@
+.textingbar{
+    position: fixed;
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    background-color: rgb(243, 73, 61);
+    bottom: 0px;
+}
+
+.textingform{
+    padding:10px;
+}
+
+.messagefield{
+    width:500px;
+    padding:15px;
+    border-radius: 10px;
+}
+
+.messagesubmit{
+    padding:15px;
+    border-radius: 10px;
+}
+
+.thisuser{
+    position: relative;
+    padding-left:10px;
+    padding-right:10px;
+}
+
+.thisuser>p{
+    padding:10px;
+    background-color: rgb(243, 73, 61);
+    border-radius: 10px;
+}
+
+.thatuser{
+    position: relative;
+    padding-left:10px;
+    padding-right:10px;
+}
+
+.thatuser>p{
+    padding:10px
+}
+
+.textstrip{
+    position:absolute;
+    top:150px;
+    width: 100%;
+    font-size: 20px;
+    background-color: rgb(255, 167, 161);
+    padding-bottom: 150px;
+}
+
+.chatbox{
+    padding: 20px;
+    background-color: rgb(243, 73, 61);
+    margin-bottom: 5px;
+}
+
+.cbdisplay{
+    text-decoration: none;
+    padding:20px;
+    width: 1000px;
+}

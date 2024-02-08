@@ -23,6 +23,9 @@ def index():
     return redirect("/signup")
 
 
+from proj.chatbp import chatting
+app.register_blueprint(chatting, url_prefix='/chat')
+
 from proj.posts import posting
 app.register_blueprint(posting, url_prefix='/post')
 

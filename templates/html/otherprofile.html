@@ -12,6 +12,7 @@
         {{otheruser.bio}}
     </div>
     <div class="settingBtns">
+        <a class="btns" href="/chat/chatwith/{{otheruser.id}}">Message</a>
         {%if not isfollowing%}
             <a class="btns" href="/search/follow/{{otheruser.username}}">Follow</a>
         {%else%}

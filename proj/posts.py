@@ -13,6 +13,7 @@ def createPost():
             user.AuthenticateByUsername(username)
 
             content = request.form["postcontent"]
+            print(request)
             post = Post()
             post.content = content
             post.uid = user.id
